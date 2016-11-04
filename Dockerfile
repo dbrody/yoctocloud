@@ -56,6 +56,7 @@ COPY bblayers.conf /home/build/yocto/poky/build/conf/
 RUN cd ~/yocto/poky && source ./oe-init-build-env build && export LC_ALL="en_US.UTF-8" && bitbake rpi-basic-image
 
 # Build Node JS
+RUN sudo apt-get install -y gcc-multilib g++-multilib
 RUN cd ~/yocto/poky && source ./oe-init-build-env build && export LC_ALL="en_US.UTF-8" && bitbake nodejs
 
 CMD [ "/bin/bash" ]
