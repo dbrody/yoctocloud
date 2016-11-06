@@ -59,6 +59,10 @@ RUN cd ~/yocto/poky && source ./oe-init-build-env build && export LC_ALL="en_US.
 RUN sudo apt-get install -y gcc-multilib g++-multilib
 RUN cd ~/yocto/poky && source ./oe-init-build-env build && export LC_ALL="en_US.UTF-8" && bitbake nodejs
 
+# Update file permissions
+RUN sudo chown build:build /home/build/yocto/poky/build/conf/local.conf
+RUN sudo chown build:build /home/build/yocto/poky/build/conf/bblayers.conf
+
 CMD [ "/bin/bash" ]
 
 
