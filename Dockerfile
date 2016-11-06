@@ -2,6 +2,8 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get -y upgrade
 
+RUN df -k
+
 # Install the following utilities (required by poky)
 RUN apt-get install -y build-essential chrpath curl diffstat gcc-multilib gawk git-core libsdl1.2-dev texinfo unzip wget xterm
 RUN apt-get install -y nano
